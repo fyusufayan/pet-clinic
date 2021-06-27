@@ -42,12 +42,17 @@
                     <goals>install</goals>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-scm-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 
     <scm>
         <developerConnection>scm:git:https://github.com/fyusufayan/pet-clinic.git</developerConnection>
         <connection>scm:git:https://github.com/fyusufayan/pet-clinic.git</connection>
+        <url>https://github.com/fyusufayan/pet-clinic.git</url>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
