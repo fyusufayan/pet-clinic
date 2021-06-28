@@ -48,6 +48,7 @@
     <scm>
         <developerConnection>scm:git:https://github.com/fyusufayan/pet-clinic.git</developerConnection>
         <connection>scm:git:https://github.com/fyusufayan/pet-clinic.git</connection>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
