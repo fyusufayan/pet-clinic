@@ -2,9 +2,11 @@ package com.daironiq.petclinic.services.map;
 
 import com.daironiq.petclinic.model.Owner;
 import com.daironiq.petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
 
     public Set<Owner> findAll() {

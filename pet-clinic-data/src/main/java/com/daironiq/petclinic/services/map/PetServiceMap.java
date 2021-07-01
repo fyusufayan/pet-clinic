@@ -2,9 +2,11 @@ package com.daironiq.petclinic.services.map;
 
 import com.daironiq.petclinic.model.Pet;
 import com.daironiq.petclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
 
     public Set<Pet> findAll() {
