@@ -1,11 +1,11 @@
 package com.daironiq.petclinic.services.map;
 
 import com.daironiq.petclinic.model.Pet;
-import com.daironiq.petclinic.services.CrudService;
+import com.daironiq.petclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudService<Pet,Long> {
+public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
 
     public Set<Pet> findAll() {
         return super.findAll();
