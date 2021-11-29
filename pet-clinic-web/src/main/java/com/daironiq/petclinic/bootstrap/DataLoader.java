@@ -1,10 +1,7 @@
 package com.daironiq.petclinic.bootstrap;
 
 import com.daironiq.petclinic.model.*;
-import com.daironiq.petclinic.services.OwnerService;
-import com.daironiq.petclinic.services.PetTypeService;
-import com.daironiq.petclinic.services.SpecialtyService;
-import com.daironiq.petclinic.services.VetService;
+import com.daironiq.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,13 +14,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService, VetService vetService,
-                      PetTypeService petTypeService,SpecialtyService specialtyService) {
+                      PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.specialtyService=specialtyService;
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService=petTypeService;
+        this.visitService = visitService;
     }
 
     //SpringContext tam olarak hazır olunca bu run çağırılıp. Load yapılır
@@ -94,6 +93,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
+
+        Visit catVisit=new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("sneeze kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners....");
 
